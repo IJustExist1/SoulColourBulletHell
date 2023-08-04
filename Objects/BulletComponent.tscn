@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnxraxhjgi4tb"]
+
+[sub_resource type="GDScript" id="GDScript_7kylp"]
+script/source = "extends Node2D
+
+@export var Bullet: StaticBody2D
+
+var velocity = Vector2.RIGHT
+var speed = 10
+var deletionpoint = Vector2.AXIS_X
+
+func _ready():
+	deletionpoint = 1000
+	Bullet.global_position = get_node(\"/root/World/player\").global_position
+
+func _process(_delta):
+	Bullet.translate(velocity * speed)
+	if Bullet.global_position.x >= deletionpoint:
+		Bullet.queue_free()
+"
+
+[node name="BulletComponent" type="Node2D"]
+script = SubResource("GDScript_7kylp")

@@ -1,0 +1,11 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://davbi4c2dt5ve"]
+
+[ext_resource type="Texture2D" uid="uid://bpnfr8l7fmp2m" path="res://TextureAtlases/purplerail.png" id="1_0fqke"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5lha"]
+texture = ExtResource("1_0fqke")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_r5lha")
